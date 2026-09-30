@@ -1,0 +1,2711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Saliha — BCA Student, Future Developer, Creative Learner and Digital Creator">
+
+    <title>Saliha | Future Developer • Creative Learner</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .projects-section {
+            padding: 100px 6%;
+            background: #0b0b0b;
+            color: #f5f0e8;
+        }
+
+        .projects-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .projects-title span {
+            color: #c9a227;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .projects-title h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin: 12px 0;
+        }
+
+        .projects-title p {
+            color: #aaa;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .project-card {
+            background: #121212;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            overflow: hidden;
+            transition: 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #c9a227;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-number {
+            color: #c9a227;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .project-content h3 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin: 12px 0;
+        }
+
+        .project-content p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .project-type {
+            display: block;
+            color: #c9a227;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+        }
+
+        .project-button {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 1px solid #c9a227;
+            color: #f5f0e8;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .project-button:hover {
+            background: #c9a227;
+            color: #000;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            .projects-section {
+                padding: 70px 5%;
+            }
+
+            .projects-title h2 {
+                font-size: 36px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .project-image {
+                height: 230px;
+            }
+
+            .project-content {
+                padding: 24px;
+            }
+
+            .project-content h3 {
+                font-size: 24px;
+            }
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #0b0b0b;
+            color: #f4efe5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        :root {
+            --black: #0b0b0b;
+            --dark: #111111;
+            --dark-2: #171717;
+            --cream: #f4efe5;
+            --beige: #d8cbb5;
+            --gold: #c9a96a;
+            --gold-light: #e2c98e;
+            --muted: #aaa39a;
+            --line: rgba(201, 169, 106, .30);
+            --white-soft: rgba(255, 255, 255, .07);
+        }
+
+
+        /* =========================================================
+           SELECTION
+        ========================================================= */
+
+        ::selection {
+            background: var(--gold);
+            color: #111;
+        }
+
+
+        /* =========================================================
+           CONTAINER
+        ========================================================= */
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           TYPOGRAPHY
+        ========================================================= */
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+        }
+
+        .eyebrow {
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: .72rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            margin: 12px 0 20px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 650px;
+            font-size: 1rem;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 11, 11, .88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            color: var(--cream);
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c5c0b7;
+            font-size: .78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-icon span {
+            width: 18px;
+            height: 1px;
+            background: var(--cream);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 70px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            right: -120px;
+            top: 15%;
+            border: 1px solid rgba(201, 169, 106, .2);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: 5%;
+            top: 28%;
+            border: 1px solid rgba(201, 169, 106, .12);
+            transform: rotate(45deg);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .hero-small {
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: .7rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 9vw, 8.5rem);
+            line-height: .82;
+            letter-spacing: -5px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--cream);
+        }
+
+        .hero-subtitle {
+            margin: 30px 0 15px;
+            font-size: 1.35rem;
+            font-family: "Playfair Display", serif;
+            color: var(--beige);
+        }
+
+        .hero-description {
+            max-width: 530px;
+            color: var(--muted);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50px;
+            padding: 0 25px;
+            border: 1px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: .72rem;
+            transition: .35s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #111;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           HERO ART
+        ========================================================= */
+
+        .hero-art {
+            min-height: 470px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .art-frame {
+            width: min(430px, 90%);
+            aspect-ratio: 1 / 1.1;
+            border: 1px solid var(--line);
+            position: relative;
+            padding: 20px;
+            transform: rotate(2deg);
+        }
+
+        .art-inner {
+            height: 100%;
+            background:
+                linear-gradient(145deg, #1c1b19, #0d0d0d);
+            border: 1px solid rgba(255, 255, 255, .08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .art-inner::before {
+            content: "</>";
+            position: absolute;
+            font-family: monospace;
+            font-size: 7rem;
+            color: rgba(201, 169, 106, .09);
+            right: 10%;
+            top: 10%;
+        }
+
+        .art-inner::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+            left: 18%;
+            top: 25%;
+            opacity: .6;
+        }
+
+        .art-code {
+            position: absolute;
+            left: 35px;
+            bottom: 35px;
+            font-family: monospace;
+            color: var(--gold-light);
+            font-size: .8rem;
+            line-height: 2;
+            z-index: 2;
+        }
+
+        .floating-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .dot-one {
+            top: 8%;
+            right: 5%;
+        }
+
+        .dot-two {
+            bottom: 10%;
+            left: 8%;
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-heading {
+            margin-bottom: 55px;
+        }
+
+        .line {
+            width: 70px;
+            height: 1px;
+            background: var(--gold);
+            margin-top: 25px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-number {
+            font-family: "Playfair Display", serif;
+            font-size: 8rem;
+            color: rgba(201, 169, 106, .12);
+            line-height: .8;
+        }
+
+        .about-content h3 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            margin-bottom: 18px;
+            max-width: 700px;
+        }
+
+        .about-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .about-words span {
+            padding: 8px 14px;
+            border: 1px solid rgba(201, 169, 106, .25);
+            color: var(--beige);
+            font-size: .75rem;
+        }
+
+
+        /* =========================================================
+           DIGITAL IDENTITY
+        ========================================================= */
+
+        .identity {
+            background: #101010;
+        }
+
+        .identity-card {
+            max-width: 850px;
+            margin: auto;
+            padding: 55px;
+            border: 1px solid var(--line);
+            position: relative;
+            background:
+                linear-gradient(135deg,
+                    rgba(201, 169, 106, .05),
+                    transparent 50%);
+        }
+
+        .identity-card::before,
+        .identity-card::after {
+            content: "";
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            border-color: var(--gold);
+            border-style: solid;
+        }
+
+        .identity-card::before {
+            top: 15px;
+            left: 15px;
+            border-width: 1px 0 0 1px;
+        }
+
+        .identity-card::after {
+            right: 15px;
+            bottom: 15px;
+            border-width: 0 1px 1px 0;
+        }
+
+        .identity-name {
+            font-size: clamp(3rem, 8vw, 7rem);
+            letter-spacing: 5px;
+        }
+
+        .identity-role {
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-size: .75rem;
+            margin: 15px 0 40px;
+        }
+
+        .identity-quote {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            color: var(--beige);
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+
+
+        /* =========================================================
+           PROJECT DETAIL :TARGET
+        ========================================================= */
+
+        .project-detail {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 5, 5, .96);
+            z-index: 2000;
+            display: none;
+            overflow-y: auto;
+            padding: 90px 5%;
+        }
+
+        .project-detail:target {
+            display: block;
+        }
+
+        .detail-box {
+            max-width: 950px;
+            margin: auto;
+            border: 1px solid var(--line);
+            background: #111;
+            padding: 50px;
+        }
+
+        .close-detail {
+            display: inline-block;
+            border: 1px solid var(--line);
+            padding: 8px 15px;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .detail-preview {
+            min-height: 350px;
+            border: 1px solid rgba(201, 169, 106, .2);
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle, rgba(201, 169, 106, .12), transparent 40%),
+                #0a0a0a;
+            margin-bottom: 35px;
+        }
+
+        .detail-preview span {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.2rem, 6vw, 5rem);
+            color: var(--beige);
+            text-align: center;
+        }
+
+        .detail-box h2 {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            margin-bottom: 15px;
+        }
+
+        .detail-box p {
+            color: var(--muted);
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skill-group {
+            border: 1px solid rgba(255, 255, 255, .08);
+            padding: 35px;
+            background: #101010;
+        }
+
+        .skill-group h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-list span {
+            border: 1px solid rgba(201, 169, 106, .22);
+            padding: 10px 13px;
+            font-size: .75rem;
+            color: var(--beige);
+            transition: .3s;
+        }
+
+        .skill-list span:hover {
+            background: var(--gold);
+            color: #111;
+        }
+
+
+        /* =========================================================
+           BEYOND CODE
+        ========================================================= */
+
+        .beyond {
+            background: #111;
+        }
+
+        .creative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .creative-card {
+            min-height: 380px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            background: #111;
+            transition: .4s ease;
+        }
+
+        .creative-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .creative-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+
+        .creative-card:hover .creative-image {
+            transform: scale(1.06);
+        }
+
+        .creative-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, .95) 5%,
+                    rgba(0, 0, 0, .45) 50%,
+                    rgba(0, 0, 0, .08) 100%);
+        }
+
+        .creative-content {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+        }
+
+        .creative-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .creative-content p {
+            color: #d8cbb5;
+        }
+
+        .creative-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 70% 25%,
+                    rgba(201, 169, 106, .25),
+                    transparent 35%);
+            transition: .5s;
+        }
+
+        .creative-card:hover::before {
+            transform: scale(1.3);
+        }
+
+        .creative-icon {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            font-size: 3rem;
+            opacity: .6;
+        }
+
+        .creative-card h3,
+        .creative-card p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .creative-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .creative-card p {
+            color: var(--muted);
+        }
+
+
+
+        /* =========================================================
+           JOURNEY
+        ========================================================= */
+
+        .journey {
+            overflow: hidden;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            position: relative;
+            gap: 20px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 22px;
+            left: 4%;
+            right: 4%;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-top: 60px;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border: 1px solid var(--gold);
+            background: var(--black);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 16px;
+            left: 0;
+            z-index: 2;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: .8rem;
+        }
+
+
+        /* =========================================================
+           MILESTONES
+        ========================================================= */
+
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .milestone {
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            min-height: 180px;
+            transition: .3s;
+        }
+
+        .milestone:hover {
+            border-color: var(--gold);
+        }
+
+        .milestone strong {
+            font-family: "Playfair Display", serif;
+            color: var(--gold);
+            font-size: 2rem;
+        }
+
+        .milestone p {
+            margin-top: 25px;
+            color: var(--beige);
+        }
+
+
+        /* =========================================================
+           ROADMAP
+        ========================================================= */
+
+        .roadmap {
+            background: #101010;
+        }
+
+        .roadmap-list {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .roadmap-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 30px;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .roadmap-number {
+            color: var(--gold);
+            font-family: "Playfair Display", serif;
+            font-size: 1.8rem;
+        }
+
+        .roadmap-item h3 {
+            font-size: 1.5rem;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 80px;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: .95;
+        }
+
+        .contact-info p {
+            color: var(--muted);
+            margin-top: 25px;
+        }
+
+        .social-placeholders {
+            margin-top: 35px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .social-placeholders span {
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            padding: 12px 0;
+            color: var(--beige);
+            font-size: .85rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .field {
+            position: relative;
+        }
+
+        .field label {
+            display: block;
+            color: var(--gold);
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .field input,
+        .field textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, .15);
+            background: transparent;
+            color: var(--cream);
+            padding: 12px 0;
+            outline: none;
+            resize: vertical;
+        }
+
+        .field input:focus,
+        .field textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .field textarea {
+            min-height: 130px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 45px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: "Playfair Display", serif;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+        }
+
+        footer p {
+            color: var(--muted);
+            font-size: .75rem;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        .top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--gold);
+            background: #111;
+            color: var(--gold);
+            z-index: 500;
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: no-preference) {
+
+            .hero h1 {
+                animation: reveal 1.2s ease both;
+            }
+
+            .hero-art {
+                animation: float 6s ease-in-out infinite;
+            }
+
+            .floating-dot {
+                animation: spin 7s linear infinite;
+            }
+
+            @keyframes reveal {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-12px);
+                }
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .project-card,
+            .creative-card,
+            .milestone {
+                transition:
+                    transform .35s ease,
+                    border-color .35s ease;
+            }
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 140px;
+            }
+
+            .hero-art {
+                min-height: 400px;
+            }
+
+            .creative-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .creative-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .timeline {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .milestone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            section {
+                padding: 80px 0;
+            }
+
+            .container {
+                width: 88%;
+            }
+
+            .nav {
+                min-height: 68px;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                inset: 68px 0 0 0;
+                background: rgba(10, 10, 10, .98);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 25px;
+                transform: translateX(100%);
+                transition: .4s;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+            }
+
+            .menu-toggle:checked~.nav-links {
+                transform: translateX(0);
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 130px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.7rem, 18vw, 6rem);
+                letter-spacing: -3px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.15rem;
+            }
+
+            .hero-art {
+                min-height: 350px;
+            }
+
+            .art-frame {
+                width: 85%;
+            }
+
+            .about-grid {
+                gap: 35px;
+            }
+
+            .about-number {
+                font-size: 5rem;
+            }
+
+            .identity-card {
+                padding: 35px 25px;
+            }
+
+            .identity-name {
+                font-size: 3.3rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card:nth-child(5) {
+                grid-column: auto;
+            }
+
+            .project-preview {
+                height: 240px;
+            }
+
+            .browser {
+                width: 84%;
+                left: 8%;
+            }
+
+            .skills-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .creative-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .creative-card:last-child {
+                grid-column: auto;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .timeline-item {
+                padding: 20px 0 20px 45px;
+                border-left: 1px solid var(--line);
+            }
+
+            .timeline-dot {
+                left: -7px;
+                top: 25px;
+            }
+
+            .milestone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roadmap-item {
+                grid-template-columns: 50px 1fr;
+                gap: 15px;
+            }
+
+            .contact-grid {
+                gap: 45px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .detail-box {
+                padding: 25px;
+            }
+
+            .detail-preview {
+                min-height: 250px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL PHONES
+        ========================================================= */
+
+        @media (max-width: 360px) {
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .project-info {
+                padding: 22px;
+            }
+
+            .skill-group {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+
+<body id="top">
+
+
+    <!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+    <header>
+
+        <div class="container nav">
+
+            <a href="#top" class="logo">
+                SALI<span>HA</span>
+            </a>
+
+            <input type="checkbox" id="menu" class="menu-toggle">
+
+            <label for="menu" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-links">
+
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#creative">Creative</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================================
+     HERO
+========================================================= -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+                <div>
+
+                    <div class="hero-small">
+                        BCA • DIGITAL CREATIVE
+                    </div>
+
+                    <h1>
+                        SALIHA
+                        <span>Creative</span>
+                    </h1>
+
+                    <div class="hero-subtitle">
+                        Future Developer with a Creative Mind.
+                    </div>
+
+                    <p class="hero-description">
+                        BCA student • Web learner • Creative explorer
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn btn-primary">
+                            Explore My Work
+                        </a>
+
+                        <a href="#about" class="btn btn-outline">
+                            About Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-art">
+
+                    <div class="profile-frame">
+
+                        <img src="canva.png" alt="Saliha Profile" class="profile-image">
+
+                    </div>
+
+                    <div class="floating-dot dot-one"></div>
+                    <div class="floating-dot dot-two"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     ABOUT
+========================================================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        01 / About
+                    </div>
+
+                    <h2 class="section-title">
+                        Technology Meets Creativity.
+                    </h2>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-number">
+                        01
+                    </div>
+
+                    <div class="about-content">
+
+                        <h3>
+                            Learning. Building. Experimenting.
+                        </h3>
+
+                        <p>
+                            I’m a BCA student at the University of Madras,
+                            learning technology while exploring my creative side.
+                        </p>
+
+                        <p>
+                            I enjoy web development, creative design, art,
+                            cooking, clay modelling and handmade creations.
+                        </p>
+
+                        <p>
+                            I am still learning and growing, but I enjoy turning
+                            ideas into digital experiences and discovering new
+                            technologies along the way.
+                        </p>
+
+                        <div class="about-words">
+
+                            <span>LEARNING</span>
+                            <span>BUILDING</span>
+                            <span>CREATING</span>
+                            <span>EXPERIMENTING</span>
+                            <span>GROWING</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     DIGITAL IDENTITY
+========================================================= -->
+
+        <section class="identity">
+
+            <div class="container">
+
+                <div class="identity-card">
+
+                    <div class="eyebrow">
+                        Digital Identity
+                    </div>
+
+                    <div class="identity-name">
+                        SALIHA
+                    </div>
+
+                    <div class="identity-role">
+                        BCA STUDENT • FUTURE DEVELOPER
+                    </div>
+
+                    <div class="identity-quote">
+                        “Learning • Creating • Growing”
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+        <!-- ================= PROJECTS SECTION ================= -->
+
+
+
+
+        <section class="projects-section" id="projects">
+
+            <div class="projects-title">
+                <span>Selected Work</span>
+                <h2>My Projects</h2>
+                <p>
+                    A collection of websites and digital experiences
+                    created during my learning journey.
+                </p>
+            </div>
+
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 01 -->
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="img3.jpeg" alt="My First Web Project">
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-number">PROJECT 01</span>
+
+                        <h3>My First Web Project</h3>
+
+                        <p>
+                            My first web project, created as part of my
+                            journey into web development.
+                        </p>
+
+                        <span class="project-type">
+                            WEB DEVELOPMENT
+                        </span>
+
+                        <a href="https://apsaliha.Netlify.app" target="_blank" class="project-button">
+                            VIEW PROJECT
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 02 -->
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="img2.jpeg" alt="Elevated Space">
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-number">PROJECT 02</span>
+
+                        <h3>Elevated Space</h3>
+
+                        <p>
+                            A creative web design project exploring
+                            presentation and digital aesthetics.
+                        </p>
+
+                        <span class="project-type">
+                            CREATIVE WEB DESIGN
+                        </span>
+
+                        <a href="https://saliha-elevated-space.lovable.app/" target="_blank" class="project-button">
+                            VIEW PROJECT
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 03 -->
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="img4.jpeg" alt="View Mirror Fun">
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-number">PROJECT 03</span>
+
+                        <h3>GreenLand Plywood</h3>
+
+                        <p>
+                            An interactive web experience created to
+                            explore creative digital interaction.
+                        </p>
+
+                        <span class="project-type">
+                            INTERACTIVE WEB
+                        </span>
+
+                        <a href="https://view-mirror-fun.lovable.app/" target="_blank" class="project-button">
+                            VIEW PROJECT
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 04 -->
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="img1.jpeg" alt="India Travel Premium Explore">
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-number">PROJECT 04</span>
+
+                        <h3>India Travel – Premium Explore</h3>
+
+                        <p>
+                            A travel website concept designed to present
+                            India's destinations in a premium digital style.
+                        </p>
+
+                        <span class="project-type">
+                            TRAVEL WEBSITE
+                        </span>
+
+                        <a href="https://indiatravel-premium-explore.lovable.app" target="_blank"
+                            class="project-button">
+                            VIEW PROJECT
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 05 -->
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="img5.jpeg" alt="Lumiere's Sweet Haven">
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-number">PROJECT 05</span>
+
+                        <h3>Lumiere's Sweet Haven</h3>
+
+                        <p>
+                            A creative bakery website concept with an
+                            elegant and welcoming digital experience.
+                        </p>
+
+                        <span class="project-type">
+                            CREATIVE WEBSITE
+                        </span>
+
+                        <a href="https://lumieres-sweet-haven.lovable.app/" target="_blank" class="project-button">
+                            VIEW PROJECT
+                        </a>
+                    </div>
+
+                </div>
+                <!-- PROJECT 06 -->
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="img6.jpeg" alt="Luxora Interiors">
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-number">PROJECT 06</span>
+
+                        <h3>Luxora Interiors</h3>
+
+                        <p>
+                            A premium interior design website featuring
+                            elegant spaces, modern interiors and creative design.
+                        </p>
+
+                        <span class="project-type">
+                            INTERIOR DESIGN WEBSITE
+                        </span>
+
+                        <a href="https://luxora-elegant-spaces.lovable.app" target="_blank" class="project-button">
+                            VIEW PROJECT
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+        <!-- =========================================================
+     PROJECT DETAIL VIEWS
+========================================================= -->
+
+
+        <div id="project1" class="project-detail">
+
+            <div class="detail-box">
+
+                <a href="#projects" class="close-detail">
+                    ← Back
+                </a>
+
+                <div class="detail-preview">
+                    <span>My First Web Project</span>
+                </div>
+
+                <div class="eyebrow">
+                    PROJECT 01 • WEB DEVELOPMENT
+                </div>
+
+                <h2>
+                    My First Web Project
+                </h2>
+
+                <p>
+                    My first web project and an important part of my
+                    early learning journey in web development.
+                </p>
+
+                <a href="https://apsaliha.Netlify.app" target="_blank" rel="noopener" class="btn btn-primary">
+                    View Live Project
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div id="project2" class="project-detail">
+
+            <div class="detail-box">
+
+                <a href="#projects" class="close-detail">
+                    ← Back
+                </a>
+
+                <div class="detail-preview">
+                    <span>Elevated Space</span>
+                </div>
+
+                <div class="eyebrow">
+                    PROJECT 02 • CREATIVE WEB DESIGN
+                </div>
+
+                <h2>
+                    Elevated Space
+                </h2>
+
+                <p>
+                    A creative web design project focused on
+                    visual presentation and digital experience.
+                </p>
+
+                <a href="https://saliha-elevated-space.lovable.app/" target="_blank" rel="noopener"
+                    class="btn btn-primary">
+                    View Live Project
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div id="project3" class="project-detail">
+
+            <div class="detail-box">
+
+                <a href="#projects" class="close-detail">
+                    ← Back
+                </a>
+
+                <div class="detail-preview">
+                    <span>View Mirror Fun</span>
+                </div>
+
+                <div class="eyebrow">
+                    PROJECT 03 • INTERACTIVE EXPERIENCE
+                </div>
+
+                <h2>
+                    View Mirror Fun
+                </h2>
+
+                <p>
+                    An interactive web experience created while
+                    exploring creative digital ideas.
+                </p>
+
+                <a href="https://view-mirror-fun.lovable.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                    View Live Project
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div id="project4" class="project-detail">
+
+            <div class="detail-box">
+
+                <a href="#projects" class="close-detail">
+                    ← Back
+                </a>
+
+                <div class="detail-preview">
+                    <span>India Travel<br>Premium Explore</span>
+                </div>
+
+                <div class="eyebrow">
+                    PROJECT 04 • TRAVEL DIGITAL EXPERIENCE
+                </div>
+
+                <h2>
+                    India Travel – Premium Explore
+                </h2>
+
+                <p>
+                    A travel website concept focused on exploring
+                    India through a digital experience.
+                </p>
+
+                <a href="https://indiatravel-premium-explore.lovable.app" target="_blank" rel="noopener"
+                    class="btn btn-primary">
+                    View Live Project
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div id="project5" class="project-detail">
+
+            <div class="detail-box">
+
+                <a href="#projects" class="close-detail">
+                    ← Back
+                </a>
+
+                <div class="detail-preview">
+                    <span>Lumiere's<br>Sweet Haven</span>
+                </div>
+
+                <div class="eyebrow">
+                    PROJECT 05 • CREATIVE DIGITAL EXPERIENCE
+                </div>
+
+                <h2>
+                    Lumiere's Sweet Haven
+                </h2>
+
+                <p>
+                    A creative website project focused on visual
+                    presentation and digital experience.
+                </p>
+
+                <a href="https://lumieres-sweet-haven.lovable.app/" target="_blank" rel="noopener"
+                    class="btn btn-primary">
+                    View Live Project
+                </a>
+
+            </div>
+            <!-- PROJECT 06 -->
+            <div class="project-card">
+
+                <div class="project-image">
+                    <img src="img6.jpeg" alt="Luxora Interiors">
+                </div>
+
+                <div class="project-content">
+                    <span class="project-number">PROJECT 06</span>
+
+                    <h3>Luxora Interiors</h3>
+
+                    <p>
+                        A premium interior design studio website featuring
+                        elegant spaces, modern interiors and creative design.
+                    </p>
+
+                    <span class="project-type">
+                        INTERIOR DESIGN WEBSITE
+                    </span>
+
+                    <a href="https://luxora-elegant-spaces.lovable.app" target="_blank" class="project-button">
+                        VIEW PROJECT
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================================
+     SKILLS
+========================================================= -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        03 / Skills & Learning
+                    </div>
+
+                    <h2 class="section-title">
+                        Skills & Learning
+                    </h2>
+
+                    <p class="section-intro">
+                        A truthful overview of the areas I know and
+                        the technologies I am currently learning.
+                    </p>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+                <div class="skills-layout">
+
+
+                    <div class="skill-group">
+
+                        <h3>
+                            Currently Learning
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>C++</span>
+                            <span>Responsive Web Design</span>
+                            <span>CSS Grid</span>
+                            <span>Flexbox</span>
+                            <span>CSS Animations</span>
+                            <span>Basic Computer Skills</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <h3>
+                            Areas of Interest
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span>Web Development</span>
+                            <span>Creative Design</span>
+                            <span>New Technologies</span>
+                            <span>Artificial Intelligence</span>
+                            <span>Digital Creativity</span>
+                            <span>UI/UX Design</span>
+                            <span>Communication</span>
+                            <span>Creative Projects</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <h3>
+                            Creative Skills
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span>Web Design</span>
+                            <span>Visual Creativity</span>
+                            <span>Art</span>
+                            <span>Clay Modelling</span>
+                            <span>Handmade Crafts</span>
+                            <span>Creative Problem Solving</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <h3>
+                            Personal Skills
+                        </h3>
+
+                        <div class="skill-list">
+
+                            <span>Communication</span>
+                            <span>Presentation</span>
+                            <span>Continuous Learning</span>
+                            <span>Creativity</span>
+                            <span>Problem Solving</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     BEYOND CODE
+========================================================= -->
+
+        <section id="creative" class="beyond">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        04 / Beyond Code
+                    </div>
+
+                    <h2 class="section-title">
+                        Beyond Code
+                    </h2>
+
+                    <p class="section-intro">
+                        Creativity is not limited to technology.
+                        These are some of the things I enjoy outside coding.
+                    </p>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+                <div class="creative-grid">
+
+                    <!-- COOKING -->
+                    <article class="creative-card">
+
+                        <img src="cooking.jpg" alt="Cooking" class="creative-image">
+
+                        <div class="creative-overlay"></div>
+
+                        <div class="creative-content">
+                            <h3>Cooking</h3>
+
+                            <p>
+                                I enjoy cooking and exploring creativity through food.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- ART -->
+                    <article class="creative-card">
+
+                        <img src="art.jpg" alt="Art and Creativity" class="creative-image">
+
+                        <div class="creative-overlay"></div>
+
+                        <div class="creative-content">
+                            <h3>Art</h3>
+
+                            <p>
+                                I enjoy creating art and expressing ideas through creativity.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- CLAY -->
+                    <article class="creative-card">
+
+                        <img src="clay.jpg" alt="Clay Creations" class="creative-image">
+
+                        <div class="creative-overlay"></div>
+
+                        <div class="creative-content">
+                            <h3>Clay Creations</h3>
+
+                            <p>
+                                I enjoy making dolls and different creative objects using clay.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     JOURNEY
+========================================================= -->
+
+        <section id="journey" class="journey">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        05 / My Journey
+                    </div>
+
+                    <h2 class="section-title">
+                        My Journey
+                    </h2>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h3>
+                            Start
+                        </h3>
+
+                        <p>
+                            BCA Student
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h3>
+                            Learn
+                        </h3>
+
+                        <p>
+                            Programming & Computer Skills
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h3>
+                            Create
+                        </h3>
+
+                        <p>
+                            Web Projects
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h3>
+                            Explore
+                        </h3>
+
+                        <p>
+                            AI & New Technologies
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h3>
+                            Create More
+                        </h3>
+
+                        <p>
+                            Creative & Digital Projects
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h3>
+                            Future
+                        </h3>
+
+                        <p>
+                            Future Developer
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     MILESTONES
+========================================================= -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        06 / Milestones
+                    </div>
+
+                    <h2 class="section-title">
+                        My Milestones
+                    </h2>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+                <div class="milestone-grid">
+
+
+                    <div class="milestone">
+
+                        <strong>01</strong>
+
+                        <p>
+                            BCA Student
+                        </p>
+
+                    </div>
+
+
+                    <div class="milestone">
+
+                        <strong>02</strong>
+
+                        <p>
+                            Built Multiple Web Projects
+                        </p>
+
+                    </div>
+
+
+                    <div class="milestone">
+
+                        <strong>03</strong>
+
+                        <p>
+                            Exploring AI
+                        </p>
+
+                    </div>
+
+
+                    <div class="milestone">
+
+                        <strong>04</strong>
+
+                        <p>
+                            Learning Web Development
+                        </p>
+
+                    </div>
+
+
+                    <div class="milestone">
+
+                        <strong>05</strong>
+
+                        <p>
+                            Developing Creative Skills
+                        </p>
+
+                    </div>
+
+
+                    <div class="milestone">
+
+                        <strong>06</strong>
+
+                        <p>
+                            Continuously Improving Communication
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     GOALS
+========================================================= -->
+
+        <section id="goals" class="roadmap">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        07 / Where I'm Going
+                    </div>
+
+                    <h2 class="section-title">
+                        Where I'm Going
+                    </h2>
+
+                    <p class="section-intro">
+                        A simple roadmap of the skills and goals
+                        I want to continue developing.
+                    </p>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+                <div class="roadmap-list">
+
+
+                    <div class="roadmap-item">
+
+                        <div class="roadmap-number">01</div>
+
+                        <h3>
+                            Become more skilled in technology
+                        </h3>
+
+                    </div>
+
+
+                    <div class="roadmap-item">
+
+                        <div class="roadmap-number">02</div>
+
+                        <h3>
+                            Improve web development
+                        </h3>
+
+                    </div>
+
+
+                    <div class="roadmap-item">
+
+                        <div class="roadmap-number">03</div>
+
+                        <h3>
+                            Learn AI
+                        </h3>
+
+                    </div>
+
+
+                    <div class="roadmap-item">
+
+                        <div class="roadmap-number">04</div>
+
+                        <h3>
+                            Build better websites
+                        </h3>
+
+                    </div>
+
+
+                    <div class="roadmap-item">
+
+                        <div class="roadmap-number">05</div>
+
+                        <h3>
+                            Improve communication
+                        </h3>
+
+                    </div>
+
+
+                    <div class="roadmap-item">
+
+                        <div class="roadmap-number">06</div>
+
+                        <h3>
+                            Become independent
+                        </h3>
+
+                    </div>
+
+
+                    <div class="roadmap-item">
+
+                        <div class="roadmap-number">07</div>
+
+                        <h3>
+                            Build a successful career in technology
+                        </h3>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     CONTACT
+========================================================= -->
+
+        <section id="contact">
+
+            <div class="container contact-grid">
+
+
+                <div class="contact-info">
+
+                    <div class="eyebrow">
+                        08 / Contact
+                    </div>
+
+                    <h2>
+                        Let's Create Something Meaningful.
+                    </h2>
+
+                    <p>
+                        I am continuing to learn, create and explore.
+                        This portfolio represents my current journey.
+                    </p>
+
+
+                    <div class="social-placeholders">
+
+                        <span>
+                            Your email will appear here
+                        </span>
+
+                        <span>
+                            GitHub profile
+                        </span>
+
+                        <span>
+                            LinkedIn profile
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <form class="contact-form" action="#" method="post">
+
+                    <div class="field">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div>
+
+                <div class="footer-logo">
+                    SALIHA
+                </div>
+
+                <p>
+                    BCA Student • Future Developer
+                </p>
+
+            </div>
+
+            <p>
+                “Learning. Creating. Growing.”
+            </p>
+
+            <p>
+                © 2026 Saliha
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <a href="#top" class="top" aria-label="Back to top">
+        ↑
+    </a>
+
+
+</body>
+
+</html>
